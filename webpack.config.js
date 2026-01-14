@@ -16,7 +16,7 @@ module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     filename: '[name][contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     clean: true,
     assetModuleFilename: 'assets/[hash][ext][query]',
   },
@@ -36,12 +36,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(jpg|jpeg|png|svg|gif)$/i,
@@ -64,4 +59,3 @@ module.exports = {
     ],
   },
 };
-
